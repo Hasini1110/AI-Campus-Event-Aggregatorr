@@ -1,46 +1,35 @@
-export default function DashboardPage() {
+import { supabase } from "@/lib/supabase";
+import EventList from "@/components/EventList";
+
+export default async function DashboardPage() {
+  const { data: events, error } =
+    await supabase
+      .from("events")
+      .select("*");
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
   return (
     <main className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-4xl font-bold text-blue-600 mb-6">
-        Campus Events Dashboard
-      </h1>
+      <div className="flex justify-between items-center mb-6">
+  <h1 className="text-4xl font-bold text-blue-600">
+    Campus Events Dashboard
+  </h1>
 
-      <input
-        type="text"
-        placeholder="Search events..."
-        className="w-full p-3 border rounded mb-6 text-black"
-      />
+  <div className="bg-white px-4 py-2 rounded shadow">
+    <p className="text-gray-600">
+      Total Events
+    </p>
 
-      <div className="grid gap-4">
+    <p className="text-2xl font-bold text-blue-600">
+      {events?.length || 0}
+    </p>
+  </div>
+</div>
 
-        <div className="bg-white p-4 rounded shadow">
-          <h2 className="text-xl font-semibold text-black">
-            AI Workshop
-          </h2>
-          <p className="text-gray-600">
-            June 20, 2026 • Main Auditorium
-          </p>
-        </div>
-
-        <div className="bg-white p-4 rounded shadow">
-          <h2 className="text-xl font-semibold text-black">
-            Hackathon
-          </h2>
-          <p className="text-gray-600">
-            June 25, 2026 • Innovation Lab
-          </p>
-        </div>
-
-        <div className="bg-white p-4 rounded shadow">
-          <h2 className="text-xl font-semibold text-black">
-            Placement Drive
-          </h2>
-          <p className="text-gray-600">
-            June 30, 2026 • Seminar Hall
-          </p>
-        </div>
-
-      </div>
+      <EventList events={events || []} />
     </main>
   );
 }

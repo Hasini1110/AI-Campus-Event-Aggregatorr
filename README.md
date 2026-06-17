@@ -34,3 +34,62 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# 🎓 AI Campus Event Aggregator
+
+A smart full-stack web platform for managing and discovering campus events with AI-powered automation.
+
+---
+
+## 🚀 Live Demo
+https://ai-campus-event-aggregatorr-cquic2n18.vercel.app
+
+---
+
+## 📌 Project Overview
+
+This project is a campus event management system that allows admins to create events and users to explore them easily.
+
+It uses AI to automatically extract event details from posters and generate summaries, reducing manual effort.
+
+---
+
+## ✨ Features
+
+### 🎯 Core Features
+- Add and manage campus events
+- Event dashboard with all listings
+- Category-based filtering (Hackathon, Workshop, etc.)
+- Search events
+
+### 🤖 AI Features
+- AI-powered poster text extraction
+- Auto-fill event form from uploaded poster
+- AI-generated event summary
+
+### 🖼️ Media Handling
+- Poster upload via Supabase Storage
+- Public image URLs for events
+
+### 🔐 Authentication
+- Login / Register system
+- Role-based access (Admin/User)
+
+---
+
+## 🛠️ Tech Stack
+
+- Next.js (Frontend + Backend)
+- TypeScript
+- Tailwind CSS
+- Supabase (Database + Storage)
+- OpenAI API (AI features)
+- Vercel (Deployment)
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone repo
+```bash
+git clone https://github.com/Hasini1110/AI-Campus-Event-Aggregatorr
